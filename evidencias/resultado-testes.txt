@@ -1,0 +1,20 @@
+Compilacao concluida: dist/extrator-estatisticas-esportivas.jar
+[OK] percentual inteiro
+[OK] percentual com virgula
+[OK] fracao
+[OK] decimal com virgula
+[OK] deteccao automatica
+[OK] limites zero e um
+[OK] rejeita denominador zero
+[OK] rejeita valor fora da faixa
+[OK] formato por alias
+[OK] seletor por classe descendente e texto aninhado
+[OK] seletor por id
+[OK] seletor por atributo
+[OK] pipeline completo em HTML
+[OK] funcao customizada como valor de primeira classe
+[OK] seletor inexistente gera erro
+[OK] combinador CSS nao suportado gera mensagem clara
+------------------------------------------------------------
+TOTAL: 16 testes aprovados.
+Todos os cenarios foram executados com sucesso.

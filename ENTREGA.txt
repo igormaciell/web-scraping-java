@@ -1,0 +1,15 @@
+CHECKLIST ANTES DE ENVIAR
+
+[ ] Preencher os dados pessoais no inicio de RELATORIO.md
+[ ] Executar testar.sh ou testar.bat
+[ ] Confirmar a mensagem "TOTAL: 16 testes aprovados"
+[ ] Opcional: abrir http://localhost:8080 e tirar uma captura da demonstracao
+[ ] Enviar o ZIP completo, incluindo src, RELATORIO.md e README.md
+
+ARQUIVO EXECUTAVEL
+
+dist/extrator-estatisticas-esportivas.jar
+
+COMANDO
+
+java -jar dist/extrator-estatisticas-esportivas.jar

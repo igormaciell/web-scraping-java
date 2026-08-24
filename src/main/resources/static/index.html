@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Extrator Java Web de estatisticas esportivas com normalizacao entre 0.0 e 1.0.">
+    <title>Extrator de Estatisticas Esportivas</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="cabecalho">
+    <div class="limite cabecalho-conteudo">
+        <div>
+            <p class="rotulo">LINGUAGENS DE PROGRAMACAO · JAVA WEB</p>
+            <h1>Extrator de Estatisticas Esportivas</h1>
+            <p class="subtitulo">
+                Web scraping sob demanda com padronizacao de percentuais, fracoes e valores decimais.
+            </p>
+        </div>
+        <div class="indicador" id="indicador-saude" aria-live="polite">
+            <span class="ponto"></span>
+            verificando servidor
+        </div>
+    </div>
+</header>
+
+<main class="limite grade-principal">
+    <section class="painel painel-formulario">
+        <div class="titulo-painel">
+            <div>
+                <p class="passo">01</p>
+                <h2>Configurar extracao</h2>
+            </div>
+            <button class="botao secundario" id="botao-demonstracao" type="button">
+                Executar demonstracao completa
+            </button>
+        </div>
+
+        <div class="atalhos" aria-label="Exemplos locais">
+            <button type="button" class="atalho" data-exemplo="futebol">Futebol · 68%</button>
+            <button type="button" class="atalho" data-exemplo="basquete">Basquete · 15/20</button>
+            <button type="button" class="atalho" data-exemplo="volei">Volei · 0,82</button>
+        </div>
+
+        <form id="formulario-scraping">
+            <div class="campo campo-largo">
+                <label for="url">URL do portal</label>
+                <input id="url" name="url" type="url" required
+                       placeholder="https://portal.exemplo/atleta">
+                <small>A coleta e realizada pelo servidor Java no momento da requisicao.</small>
+            </div>
+
+            <div class="linha-campos">
+                <div class="campo">
+                    <label for="seletor">Seletor CSS</label>
+                    <input id="seletor" name="seletor" required placeholder=".posse-bola">
+                </div>
+                <div class="campo">
+                    <label for="formato">Formato</label>
+                    <select id="formato" name="formato" required>
+                        <option value="PERCENTUAL">Percentual</option>
+                        <option value="FRACAO">Fracao</option>
+                        <option value="DECIMAL">Decimal</option>
+                        <option value="AUTOMATICO">Automatico</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="linha-campos tres-colunas">
+                <div class="campo">
+                    <label for="esporte">Esporte</label>
+                    <input id="esporte" name="esporte" required value="Futebol">
+                </div>
+                <div class="campo">
+                    <label for="atleta">Atleta ou equipe</label>
+                    <input id="atleta" name="atleta" required value="Equipe Aurora">
+                </div>
+                <div class="campo">
+                    <label for="metrica">Metrica</label>
+                    <input id="metrica" name="metrica" required value="Posse de bola">
+                </div>
+            </div>
+
+            <button class="botao primario" type="submit" id="botao-raspar">
+                Raspar e normalizar
+            </button>
+        </form>
+    </section>
+
+    <aside class="painel painel-conceitos">
+        <p class="passo">02</p>
+        <h2>Conceitos aplicados</h2>
+        <article>
+            <h3>Identificadores</h3>
+            <p>Nomes semanticos em classes, metodos, variaveis, constantes e enumeracoes.</p>
+        </article>
+        <article>
+            <h3>Funcoes de 1ª ordem</h3>
+            <p>Metodos como normalizar percentual e fracao recebem dados e retornam dados.</p>
+        </article>
+        <article>
+            <h3>Funcoes de 1ª classe</h3>
+            <p>Referencias de metodo sao armazenadas em um mapa e passadas ao pipeline como valores.</p>
+        </article>
+        <div class="formula">
+            <span>Percentual</span><code>68 / 100 = 0,68</code>
+            <span>Fracao</span><code>15 / 20 = 0,75</code>
+        </div>
+    </aside>
+
+    <section class="painel painel-normalizador">
+        <div>
+            <p class="passo">03</p>
+            <h2>Testar somente a normalizacao</h2>
+            <p>Use este recurso para validar o parser sem acessar uma pagina externa.</p>
+        </div>
+        <form id="formulario-normalizacao" class="normalizador-form">
+            <div class="campo">
+                <label for="valor-manual">Valor original</label>
+                <input id="valor-manual" name="valor" value="Posse: 68%" required>
+            </div>
+            <div class="campo">
+                <label for="formato-manual">Formato</label>
+                <select id="formato-manual" name="formato">
+                    <option value="PERCENTUAL">Percentual</option>
+                    <option value="FRACAO">Fracao</option>
+                    <option value="DECIMAL">Decimal</option>
+                    <option value="AUTOMATICO">Automatico</option>
+                </select>
+            </div>
+            <button class="botao secundario" type="submit">Normalizar</button>
+        </form>
+        <output id="saida-normalizacao" class="saida-normalizacao" aria-live="polite">—</output>
+    </section>
+
+    <section class="painel painel-resultados">
+        <div class="titulo-painel">
+            <div>
+                <p class="passo">04</p>
+                <h2>Resultados padronizados</h2>
+            </div>
+            <span class="contador" id="contador-resultados">0 registros</span>
+        </div>
+        <div id="mensagem" class="mensagem oculto" role="alert"></div>
+        <div class="tabela-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Esporte</th>
+                    <th>Atleta/equipe</th>
+                    <th>Metrica</th>
+                    <th>Original</th>
+                    <th>Normalizado</th>
+                    <th>Formato</th>
+                    <th>Coleta</th>
+                </tr>
+                </thead>
+                <tbody id="corpo-resultados">
+                <tr class="vazio">
+                    <td colspan="7">Execute uma extracao ou a demonstracao completa.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="limite rodape-conteudo">
+        <span>Projeto academico · Java 17 · HTTP + HTML Parser</span>
+        <span>Saida uniforme no intervalo [0.0, 1.0]</span>
+    </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

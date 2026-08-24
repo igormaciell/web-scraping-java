@@ -1,0 +1,45 @@
+{
+    "quantidade": 4,
+    "resultados": [
+        {
+            "esporte": "Futebol",
+            "atleta": "Equipe Aurora",
+            "metrica": "Posse de bola",
+            "valorOriginal": "Posse: 68 %",
+            "valorNormalizado": 0.68,
+            "formato": "PERCENTUAL",
+            "fonte": "http://localhost:18082/examples/futebol.html",
+            "coletadoEm": "2026-08-23T23:14:02.267884136Z"
+        },
+        {
+            "esporte": "Futebol",
+            "atleta": "Equipe Aurora",
+            "metrica": "Taxa de passes certos",
+            "valorOriginal": "Taxa de passes certos: 91%",
+            "valorNormalizado": 0.91,
+            "formato": "PERCENTUAL",
+            "fonte": "http://localhost:18082/examples/futebol.html",
+            "coletadoEm": "2026-08-23T23:14:02.268635339Z"
+        },
+        {
+            "esporte": "Basquete",
+            "atleta": "Marina Costa",
+            "metrica": "Eficiencia de arremessos",
+            "valorOriginal": "Arremessos convertidos: 15/20",
+            "valorNormalizado": 0.75,
+            "formato": "FRACAO",
+            "fonte": "http://localhost:18082/examples/basquete.html",
+            "coletadoEm": "2026-08-23T23:14:02.269550964Z"
+        },
+        {
+            "esporte": "Volei",
+            "atleta": "Lucas Nunes",
+            "metrica": "Aproveitamento de saques",
+            "valorOriginal": "Aproveitamento de saques: 0,82",
+            "valorNormalizado": 0.82,
+            "formato": "DECIMAL",
+            "fonte": "http://localhost:18082/examples/volei.html",
+            "coletadoEm": "2026-08-23T23:14:02.270286744Z"
+        }
+    ]
+}

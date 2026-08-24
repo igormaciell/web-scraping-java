@@ -1,0 +1,10 @@
+{
+    "esporte": "Futebol",
+    "atleta": "Equipe Aurora",
+    "metrica": "Posse de bola",
+    "valorOriginal": "Posse: 68 %",
+    "valorNormalizado": 0.68,
+    "formato": "PERCENTUAL",
+    "fonte": "http://localhost:18082/examples/futebol.html",
+    "coletadoEm": "2026-08-23T23:14:02.870945606Z"
+}
