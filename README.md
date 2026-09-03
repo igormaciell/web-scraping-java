@@ -1,6 +1,8 @@
 # Extrator de Estatisticas Esportivas em Tempo Real
 
-Projeto academico da disciplina **Linguagens de Programacao**, desenvolvido em Java Web para coletar dados presentes em HTML e transformar estatisticas heterogeneas em valores decimais no intervalo **0.0 a 1.0**.
+Projeto academico da disciplina **Linguagens de Programacao** do 6° período da minha graduação em Ciencia da computacao na Universidade Vila Velha - UVV.
+
+Desenvolvido em Java Web para coletar dados presentes em HTML e transformar estatisticas heterogeneas em valores decimais no intervalo **0.0 a 1.0**.
 
 ## O que foi implementado
 
